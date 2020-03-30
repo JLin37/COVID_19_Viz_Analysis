@@ -19,7 +19,6 @@ function init() {
 
         plot_data = get_plot_data(data.Afghanistan);
         traces = create_traces(plot_data)
-        
         var layout = {
             yaxis: {
               type: 'linear',
@@ -48,6 +47,7 @@ function get_plot_data(data) {
 };
 
 function create_traces(data) {
+
     var trace1 = {
         x: data[0],
         y: data[1],
@@ -92,8 +92,19 @@ function updatePlotly() {
     });
 }
 
-// d3.json("https://raw.githubusercontent.com/johan/world.geo.json/master/countries.geo.json").then(data=>{
-//     console.log(data)
-// })
+// // Call updatePlotly() when a change takes place to the DOM
+// d3.selectAll("#chart_select").on("change", newchart);
+
+// function newchart() {
+//     covid_data.then(data =>{
+//         // Use D3 to select the dropdown menu
+//         var dropdownMenu = d3.select("#chart_type");
+//         // Assign the value of the dropdown menu option to a variable
+//         var chart_type = dropdownMenu.property("value");
+        
+//         plot_data = get_plot_data(data.Afghanistan);
+//         traces = create_traces(plot_data)
+//     });
+// }
 
 init();
